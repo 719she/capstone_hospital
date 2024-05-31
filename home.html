@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>병원제목</title>
+    <meta name='viewport' content='width=device-width, initial-scale=0.5'>
+    <link rel='stylesheet' type='text/css' href='home.css'>
+    <link rel='icon' type="image/png" href="cat.png">
+
+</head>
+
+<body>
+
+    <!-- 헤더 (로고 홈 사이트맵) -->
+    <header>
+
+        <div id="home_bar">
+            <div>
+                <a href="">
+                    <img id="logo" src="cat.png" alt="logo">
+                </a>
+            </div>
+            <button onclick=location.reload()>홈</button>
+            <button onclick=sns_Alert();>회원가입</button>
+            <button id="timecheck">시간확인</button>
+            <div id="current_time"></div>
+            <button onclick="timeCheck2(); setTimeout(error_reload,1000);">시간퍼즐 테스트</button>
+            <button onclick="mobile_Test()">모바일 접속 테스트</button>
+        </div>
+
+        <div id="login_bar" class="login_bar" >
+            <form id="form_login" onsubmit="return false;">
+                <label for="code">회원 코드 :</label>
+                <input required maxlength="4" placeholder="4자리의 회원코드를 입력하세요" type="text" id="code">
+                <button id="login" type="button">submit</button>
+            </form>
+        </div>
+
+        <div id="login_5926" class="login_bar">
+             <b>환자번호 : 5926</b>
+        </div>
+
+    </header>
+
+    <!-- 네비게이션 바 (메뉴) -->
+    <nav>
+        <button onclick=page_Doctor()>진료과/의료진</button>
+        <button onclick=page_Reserve()>예약/조회</button>
+        <button onclick=page_Info()>병원안내</button>
+        <button onclick=page_FAQ()>FAQ</button>
+    </nav>
+
+    <!-- 사이드 바 -->
+    <aside>
+        <div id="side_doc" class="side">
+            <h1>진료과/의료진</h1>
+            <a href="#introduce">진료과 소개</a>
+            <a href="#disease">대상 질환</a>
+            <a href="#staff">의료진 소개</a>
+        </div>
+        <div id="side_reserve" class="side">
+            <h1>예약/조회</h1>
+            <a href="#introduce">예약현황</a>
+            <a href="#introduce">진료시간표</a>
+        </div>
+        <div id="side_info" class="side">
+            <h1>병원안내</h1>
+            <a href="#introduce">공지사항</a>
+            <a href="#disease">채용안내</a>
+            <a href="#staff">찾아오는 길</a>
+        </div>
+        <div id="side_faq" class="side">
+            <h1>FAQ</h1>
+            <a href="#introduce">자주 찾는 질문</a>
+            <a href="#disease">문의사항</a>
+        </div>
+        <div id="side_mypage" class="side">
+            <a href="#introduce">회원정보</a>
+            <a href="#disease">진료기록</a>
+        </div>
+    </aside>
+
+    <!-- 메인 콘텐츠 영역 -->
+    <main>
+        <div id="page_home" class="page">
+            <!-- 병원 소개 슬라이드 -->
+            <section id="main_slide">
+                <button id="left" onclick="plusDivs(-1, 0); slide_Check(0);">&#10094;</button>
+                <div class="slide" style="display: block;">
+                    <img class="slide_img" src="main_slide1.jpg" alt="slide_img">
+
+                </div>
+                <div class="slide" style="display: none">
+                    <img class="slide_img" src="main_slide2.jpg" alt="slide_img">
+
+                </div>
+                <div class="slide" style="display: none">
+                    <img class="slide_img" src="main_slide3.jpg" alt="slide_img">
+
+                </div>
+                <button id="right" onclick="plusDivs(1, 0); slide_Check(1);">&#10095;</button>
+            </section>
+
+            <!--광고 배너 영역-->
+            <section id="ad">
+                <div id="aditem_tel" class="item">
+                    TEL : 01-519-2216
+                </div>
+                <div id="hidden_tel" class="hidden_item">
+                    TEL : XX-5X9-2XX6
+                </div>
+                <div id="aditem_text" class="item">
+                    *페이지 점검 시간 공지*,<br> 
+                    오후 11시에서 자정까지 접속이 원활하지 않을 수 있으니 유의하세요.
+                </div>
+                <div id="hidden_text" class="hidden_item">
+                    
+                </div>
+                <!-- <div id="aditem_slide" class="item">
+                    자동 슬라이드 삽입
+                </div> -->
+                <div id="hidden_slide" class="hidden_item">
+                </div>
+            </section>
+
+            <!--공지 게시판 -->
+            <section id="board" class="board">
+                <a class="board_nav" href="#">공지사항</a>
+                <a class="board_nav" href="#">채용안내</a>
+                <a class="board_nav" href="#">뉴스</a>
+                <a class="board_nav" href="#">건강정보</a>
+                
+                <table class="board_table">
+                    <thead>
+                        <th>번호</th>
+                        <th colspan="3">제목</th>
+                        <th>작성자</th>
+                        <th>작성일</th>
+                        <th>조회수</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td colspan="3">[비밀글입니다.]</td>
+                            <td>pim</td>
+                            <td>05.20</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td colspan="3">[비밀글입니다.]</td>
+                            <td>testu</td>
+                            <td>05.19</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td colspan="3">[비밀글입니다.]</td>
+                            <td>mina</td>
+                            <td>05.19</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td colspan="3"><a onclick="open_Modal();   ">[비밀글입니다.]</a></td>
+                            <td>jean</td>
+                            <td>05.16</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </section>
+
+        </div>
+
+        <div id="page_my" class="page">
+            <section id="patient_5926" class="patient">
+                <h1>
+                    회원정보
+                </h1>
+                <ul>
+                    <li>
+                        <img src="doc_psy1.png" class="pat_profile"><br>
+                        <br>
+                        - 이름 : XXX
+                    </li>
+                    <li>
+                        분류 : 환자
+                    </li>
+                    <li>
+                        나이 :  XX
+                    </li>
+                    <li>
+                        성별 : X
+                    </li>
+                </ul>
+
+                <h1>
+                    진료기록
+                </h1>
+                <ul>
+                    <li>
+                        담당교수
+                        <p>
+                            Jean Guillermo
+                        </p>
+                    </li>
+                    <li>
+                        개요
+                        <P>
+                            극단적 대인기피증세<br>
+                            간헐적 섬망<br>
+                        </P>
+                    </li>
+                    <li>
+                        특이사항
+                        <p>
+                            : XXXX
+                        </p>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <div id="page_menu" class="page">
+            <!-- 각 메뉴 화면 -->
+            <section id="menu_doc" class="menu">
+
+                <button id="btn_psy" class="department" onclick=infomation_Check(psy);>
+                    정신의학과
+                </button>
+
+                <button id="btn_imi" class="department" onclick=infomation_Check(imi);>
+                    감염내과
+                </button>
+
+                <button id="btn_cs" class="department" onclick=infomation_Check(cs);>
+                    흉부외과
+                </button>
+
+                <button id="btn_nu" class="department" onclick=infomation_Check(nu);>
+                    신경과
+                </button>
+
+                <div id="psy" class="information">
+                    <img class="img_info" src="info_psy.png" alt="의학과 이미지">
+                    <h1>PSY(psychology) - 정신건강의학과</h1>
+
+                    <p id="introduce">
+                        정신건강의학과는 행복한 삶을 누릴 수 있도록 도와드립니다.<br>
+                        <br>
+                        정신은 신체와 함께 인간의 건강을 좌우합니다.
+                        건강한 마음은 건강한 신체를 유지하는 것과 질병을 이겨낼 수 있는 근원적인 힘이 됩니다. 
+                        과거에는 정신건강의학과에 대해 단지 정신질환만을 치료하는 곳이라는 선입견이
+                        있었지만, 현재와 미래의 정신건강의학과는 개인의 행복한 생활을 유지할 수 있는 
+                        건강한 정신을 위해 다양한 도움을 드리고 있습니다. 정신건강의학과를 방문하는 것에 대해 조금의
+                        용기를 내신다면, 여러분은 한층 더 만족스럽고, 풍성한 인생을 가꿀 수 있는 기회와 만날 수 있습니다.
+                    </p>
+
+                    <ul>
+                        <li id="disease">
+                            진료대상 질환
+                            <p>
+                                - 우울증<br>
+                                - 섬망<br>
+                                - 인지기능 저하<br>
+                            </p>
+                        </li>
+                        <li id="staff">
+                            의료진
+                            <ul>
+                                <li>
+                                    <img src="doc_psy1.png" class="doc_profile"><br>
+                                    <b>Ahunu Pam</b>
+                                    <h5>TEL: xxx-1645</h5>
+                                    <p>
+                                        - Sertifikadu Edukasaun Folga Foun Traditional Medisina Ida Kompleta (Sosyete Ahu Timor-Leste)<br>
+                                        - Membru Kompletu Asosiasaun Pesqiza Exérsisi ba Kórasan<br>
+                                        - Membru Kompletu Asosiasaun Internasional ba Kontrola Rohan-Hetu (IRA)<br>
+                                        - Konsellu Mediku ba Malu ho Doensase Idosos Iha Igreja Hanbit ho Esperans<br>
+                                    </p>
+                                </li>
+                                <li id="jean">
+                                    <img onclick="change_Profile();" src="doc_psy2.png" class="doc_profile"><br>
+                                    <b>Jean Guillermo</b> 
+                                    <h5>TEL: xxx-1648</h5>
+                                    <p>
+                                        - Certificat de conseiller en enfance de deuxième classe, Orphelinat National de France<br>
+                                        - Conseiller des jeunes, école primaire en face de l'Ambassade de France en Corée<br>
+                                        - Membre associé de la Société Coréenne de Recherche sur le Traitement de la Rhinite<br>
+                                    </p>
+                                </li>
+
+                                <li id="hidden_jean">
+                                    <img src="jean.png" class="doc_profile"><br>
+                                    <b>Jean Guillermo</b> 
+                                    <h1>><>><><</h1>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="imi" class="information">
+                    <img class="img_info" src="info_psy.png" alt="의학과 이미지">
+                    <h1>IMI(Internal Medicine Infection) - 감염내과</h1>
+
+                    <p id="introduce">
+                        정신건강의학과는 행복한 삶을 누릴 수 있도록 도와드립니다.<br>
+                        <br>
+                        정신은 신체와 함께 인간의 건강을 좌우합니다.
+                        건강한 마음은 건강한 신체를 유지하는 것과 질병을 이겨낼 수 있는 근원적인 힘이 됩니다. 
+                        과거에는 정신건강의학과에 대해 단지 정신질환만을 치료하는 곳이라는 선입견이
+                        있었지만, 현재와 미래의 정신건강의학과는 개인의 행복한 생활을 유지할 수 있는 
+                        건강한 정신을 위해 다양한 도움을 드리고 있습니다. 정신건강의학과를 방문하는 것에 대해 조금의
+                        용기를 내신다면, 여러분은 한층 더 만족스럽고, 풍성한 인생을 가꿀 수 있는 기회와 만날 수 있습니다.
+                    </p>
+
+                    <ul>
+                        <li id="disease">
+                            진료대상 질환
+                            <p>
+                                - 세균,바이러스성 질환<br>
+                                - 결핵<br>
+                                - 원인불명 감염증<br>
+                            </p>
+                        </li>
+                        <li id="staff">
+                            의료진
+                            <ul>
+                                <li>
+                                    <img src="doc_psy1.png" class="doc_profile"><br>
+                                    <b>Ahunu Pam</b>
+                                    <h3>TEL: xxx-1645</h3>
+                                    <p>
+                                        - Sertifikadu Edukasaun Folga Foun Traditional Medisina Ida Kompleta (Sosyete Ahu Timor-Leste)<br>
+                                        - Membru Kompletu Asosiasaun Pesqiza Exérsisi ba Kórasan<br>
+                                        - Membru Kompletu Asosiasaun Internasional ba Kontrola Rohan-Hetu (IRA)<br>
+                                        - Konsellu Mediku ba Malu ho Doensase Idosos Iha Igreja Hanbit ho Esperans<br>
+                                    </p>
+                                </li>
+                                <li>
+                                    <img src="doc_psy2.png" class="doc_profile"><br>
+                                    <b>Jean Guillermo</b> 
+                                    
+                                    <p>
+                                        - Certificat de conseiller en enfance de deuxième classe, Orphelinat National de France<br>
+                                        - Conseiller des jeunes, école primaire en face de l'Ambassade de France en Corée<br>
+                                        - Membre associé de la Société Coréenne de Recherche sur le Traitement de la Rhinite<br>
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </section>
+
+            <section id="menu_reserve" class="menu">
+                <p>
+                    <h1>페이지 준비중</h1>
+                </p>
+            </section>
+            
+            <section id="menu_info" class="menu">
+                <p>
+                    <h1>페이지 준비중</h1>
+                </p>
+            </section>
+
+            <section id="menu_health" class="menu">
+                <p>
+                    <h1>페이지 준비중</h1>
+                </p>
+            </section>
+
+            <section id="menu_faq" class="menu">
+                <p>
+                    <h1>페이지 준비중</h1>
+                </p>
+            </section>
+        </div>
+
+        <div class="page">
+            <!-- 각 메뉴 화면 -->
+            <section class="menu">
+                1
+            </section>
+            <section class="menu">
+                2
+            </section>
+            <section class="menu">
+                3
+            </section>
+        </div>
+
+    </main>
+
+    <!--    푸터-->
+    <footer>
+        <!--        주소-->
+        <div id="address">
+            <ul>
+                <li>주소 : XXX-XXXX</li>
+                <li>FAX : </li>
+                <li>대표전화 : XXX-XXXX-XXXX</li>
+            </ul>
+        </div>
+
+        <!--        sns 링크-->
+        <div id="sns">
+            <ul>
+                <li><img onclick=sns_Alert(); src="instagram_logo.png" class="footer_logo"></li>
+                <li><img onclick=sns_Alert(); src="youtube_logo.png" class="footer_logo"></li>
+            </ul>
+        </div>
+
+    </footer>
+
+    <!-- 모달 창 테스트 -->
+    <div id="modal_board" class="modal">
+        <div>
+            <form id="form_board" onsubmit="return false;">
+                <label for="board_password">비밀번호 :</label>
+                <input id="board_password" required maxlength="4" placeholder="작성자 비밀번호" type="text" >
+                <button id="btn_board_password" type="button">submit</button>   
+            </form>
+            <button class="btn_modal_close" onclick="close_Modal();">X</button>
+        </div>     
+    </div>
+    
+</body>
+<script type="text/javascript" src="home.js"></script>
+</html>

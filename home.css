@@ -1,0 +1,531 @@
+body {
+    margin: 0 auto;
+    font-family: sans-serif;
+    width: 1920px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    color: white;
+}
+                                /* 추후 각 요소별 css 정리하기 */
+                                /* 버튼 관련 */
+button {    
+    width: 150px;
+    height: 50%;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+                                /* 헤더관련 */
+header {
+    width: 100%;
+    height: 200px;
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: flex-end;
+    background-color: black;
+    color: white;
+    border-style: groove;
+}
+
+#home_bar {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#home_bar button {
+    background-color: black;
+    width: 120px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+}
+                            /* 로그인 바 관련 */
+.login_bar {
+    width: 100%;
+    height: 50%;
+    margin-left: 30px;
+    padding: 20px;
+    color: white;
+    font-size: 30px;
+    
+}
+
+.login_bar input {
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#login_5926 {
+    display: none;  
+}
+                        /* 내비게이션바 관련 */
+nav {
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    height: 50%;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    border-style: groove;
+}
+
+nav button {
+    width: 160px;
+    margin: 10px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 21px;
+    
+}
+
+nav button:hover {
+    background-color: grey;
+    color: white;
+    text-align: center;
+
+}
+                                /* 사이드바 관련 */
+aside {
+    display: none;
+    position: relative;
+    margin: 20px;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 24px;
+    background-color: gray;
+    justify-content: center;
+    align-items: center;
+}
+.side {
+    display: none;
+    flex-wrap: wrap;
+    width: 100%;
+    height:30%;
+
+}
+
+.side h1 {
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.side a {
+    display: flex;
+    width: 100%;
+    height: 120px;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-style: groove;
+}
+
+
+                        /* 홈페이지 관련 */
+#page_home {
+    display: flex;
+    flex-wrap: wrap;
+}
+                        /* 홈페이지 - 슬라이드 */
+#main_slide {
+    margin: 10px;
+    padding: 10px;
+    width: 960px;
+    height: 600px;
+    display: flex;
+    border-style: groove;
+}
+
+#main_slide button {
+    width: 35px;
+    height: 100%;
+    background-color: black;
+    color: white;
+}
+
+.slide {
+    position: relative;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+
+}
+
+.text-block {
+    width: 300px;
+    height: 80px;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    opacity: 70%;
+}
+
+.slide_img {
+    width: 100%;
+    height: 100%;
+}
+                       /* 홈페이지- 광고블럭 */
+#ad {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+    height: 600px;
+    align-items: center;
+    justify-content: center;
+}
+
+#aditem_text {
+    font-size: 25px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    font-size: 50px;
+    font-family: Cambria;
+    border-style: groove;
+}
+
+.hidden_item {
+    width: 100%;
+    height: 140px;
+    padding: 10px;
+    text-align: center;
+    font-size: 60px;
+    font-family: Cambria;
+    display: none;
+    background-color: black;
+    color: greenyellow;
+}
+
+                    /* 홈페이지-게시판 */
+.board {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    padding: 10px;
+    margin-right: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.board a {
+    height: 50px;
+    cursor: pointer;
+}
+
+.board_nav {
+    display: flex;
+    width: 150px;
+    height: 80px;
+    margin: 5px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: grey;
+    color: white;
+    font-size: 15px;
+}
+
+.board_table {
+    top: 10px;
+    width: 100%;
+    border-collapse: collapse;
+    height: 90%;
+}
+
+.board_table tr:hover {
+    background-color: gray;
+
+}
+
+.board_table th {
+    text-align: center;
+    border: 1px solid white;
+    width: 100px;
+    height: 50px;
+}
+
+.board_table td {
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    border-bottom: 1px solid white;
+}
+
+.board_table button {
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    top: 5%;
+    right: 5%;
+}
+
+                        /* 메인페이지 관련 */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.page {
+    display: none;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+    border-style: groove;
+}
+
+                        /*사용자페이지 관련*/
+.patient {
+    display: none;
+    flex-wrap: wrap;
+    margin: 20px;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    font-size: 23px;
+}
+
+.patient ul {
+    margin: 20px;
+    padding: 20px;
+
+}
+
+.patient ul li {
+    list-style-type: none;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    
+}
+
+                  /* 메인페이지-진료과/의료진 */
+.menu {
+    display: none;
+    flex-wrap: wrap;
+    margin: 20px;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.department {
+    margin: 10px;
+    padding: 10px;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    
+}
+
+.department:hover {
+    background-color: gray;
+}
+
+.information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.information h1 {      
+    padding: 20px;
+    margin: 10px;
+    margin-left: 20px;
+    font-size: 40px;
+    border-style: groove;
+}
+
+.information ul {
+    margin: 20px;
+    padding: 20px;
+}
+
+.information>ul {
+    border-style: groove;
+}
+
+.information>ul li {
+    list-style-type: none;
+    margin: 20px;
+    padding: 20px;
+    font-size: 30px;
+    
+}
+
+.information p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+    padding: 20px;
+    height: 250px;
+    margin-left: 20px;
+    font-size: 23px;
+    border-style: groove;
+}
+
+.information b {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    
+}
+
+                    /* 페이지 내 이미지 크기 조정  */
+
+#logo {
+    width : 50px; 
+    height :50px;
+    background-color: black;
+}
+
+.img_info {
+    margin: 20px;
+    width:100%;
+    height: 250px;
+}
+
+.footer_logo {
+    width: 70px;
+    height: 70px;
+    filter: invert(100);
+    cursor: pointer;
+}
+
+.doc_profile {
+    width: 450px;
+    height: 450px;
+}
+
+.pat_profile {
+    width: 250px;
+    height: 250px;
+}
+
+#jean>img {
+    cursor: pointer;
+}
+
+#hidden_jean {
+    display: none;
+}
+
+
+
+                                    /* 푸터 관련 */
+footer { 
+    width: 100%;
+    height: 200px;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    border-style: groove;
+}
+
+#address {
+    display: flex;
+    width: 70%;
+    height: 100%;
+    align-items: center;
+}
+
+#address ul li {
+    margin: 10px;
+}
+
+#sns {
+    display: flex;
+    width: 30%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}   
+
+#sns ul {
+    list-style: none;
+} 
+
+#sns ul li {
+    width: 150px;
+    float: left;
+} 
+                                            /* 모달 관련 */
+.modal {
+    display: none;
+    width:110%;
+    height:100%;
+    left: -10%;
+    position: fixed;
+    background-color: rgb(255, 255, 255, 0.5);
+}
+
+.modal div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: white;
+    color: black;
+    width:110%;
+    height:20%  ;
+    top: 50%;
+    left:0;
+    font-size: 40px;
+}
+
+.modal input {
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.btn_modal_close {
+    position: relative;
+    bottom: 30%;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+}
